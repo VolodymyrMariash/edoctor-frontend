@@ -1,0 +1,11 @@
+@import 'spaces';
+
+mat-card {
+    padding: $component_padding;
+    margin: $component_margin;
+}
+
+.container-block {
+    margin: $container_margin;
+    padding: $container_padding;
+}

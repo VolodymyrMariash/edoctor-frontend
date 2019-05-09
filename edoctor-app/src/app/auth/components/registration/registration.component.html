@@ -18,8 +18,8 @@
                     <input matInput placeholder="Ім'я користувача" formControlName="username" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-error *ngIf="regForm.get('password').hasError('minlength') && regForm.get('password').hasError('maxlength)">Пароль має містити мінімум 8 симовлів</mat-error>
-                    <input matInput placeholder="Password" formControlName="password" type="password" minlength="8">
+                    <mat-error *ngIf="regForm.get('password').hasError('minlength') ">Пароль має містити мінімум 8 симовлів</mat-error>
+                    <input matInput placeholder="Пароль" formControlName="password" type="password" minlength="8" required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-error *ngIf="regForm.get('email').hasError('required')">Електронна адреса має містити знак "@"</mat-error>

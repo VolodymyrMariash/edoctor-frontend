@@ -15,7 +15,7 @@ const routes: Routes = [
       path: '',
       loadChildren: './doctors/doctors.module#DoctorsModule'
     },
-    { path: '**', redirectTo: 'auth/registration', pathMatch: 'full'}
+    { path: '**', redirectTo: 'auth/login', pathMatch: 'full'}
 ];
 
 @NgModule({

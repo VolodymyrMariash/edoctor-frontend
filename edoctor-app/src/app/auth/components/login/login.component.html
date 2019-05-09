@@ -1,0 +1,26 @@
+<div class="col-4 log-container">
+    <mat-card>
+        <div class="component-header">
+            <span>Увійти</span>
+        </div>
+        <div>
+            <form [formGroup]="logForm">
+                <mat-form-field>
+                    <mat-error *ngIf="logForm.get('username').hasError('required')"></mat-error>
+                    <input matInput placeholder="Ім'я користувача" formControlName="username" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-error *ngIf="logForm.get('password').hasError('minlength') "></mat-error>
+                    <input matInput placeholder="Пароль" formControlName="password" type="password" minlength="8"
+                        required>
+                </mat-form-field>
+                <div class="buttons d-flex justify-content-end">
+                    <button mat-raised-button color="primary">Увійти</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>
+
+
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>

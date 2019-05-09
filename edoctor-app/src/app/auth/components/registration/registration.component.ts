@@ -25,10 +25,10 @@ export class RegistrationComponent implements OnInit {
       first_name: [null, Validators.required],
       last_name: [null, Validators.required],
       username: [null, Validators.required],
-      email: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
       gender: [null, Validators.required],
       role: [null, Validators.required],
-      password: [null, Validators.required],
+      password: [null, [Validators.required],Validators.minLength(8)],
       hospital: [null, Validators.required]
     });
   }

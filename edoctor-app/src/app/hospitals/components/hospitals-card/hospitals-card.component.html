@@ -1,0 +1,34 @@
+<div class="hospital-card table">
+  <div class="table-row">
+    <div class="table-header">
+      <span>Hospital</span>
+    </div>
+    <div class="table-header">
+      <span>Hospital's contacts</span>
+    </div>
+    <div class="table-header"></div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">
+      <div class="d-flex align-items-start hospital-block">
+        <div class="img">
+          <img src="../../../../assets/img/location-placeholder.jpg" alt="">
+        </div>
+        <div class="d-flex flex-column">
+          <span [textContent]="hospital.name" class="hospital-name"></span>
+          <p class="hospital-address">
+            <span [textContent]=" 'c.' +hospital.city + ', '"></span>
+            <span [textContent]="'st.' + hospital.street"></span>
+            <span></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="hospital-contacts table-cell">
+      <span [textContent]="hospital.phone_number"></span>
+    </div>
+    <div class="table-cell button-link">
+        <a routerLink='/doctors'>View doctors</a>
+    </div>
+  </div>
+</div>

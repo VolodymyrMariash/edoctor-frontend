@@ -1,0 +1,52 @@
+<div class="col-4 reg-container">
+    <mat-card>
+        <div class="component-header">
+            <span>Register</span>
+        </div>
+        <div>
+            <form [formGroup]="regForm">
+                <mat-form-field>
+                    <input matInput placeholder="FirstName" formControlName="first_name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="LastName" formControlName="last_name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="username" type="password">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+                <div class="d-flex justify-content-around">
+                        <div class="radio-block">
+                            <mat-radio-group class="d-flex flex-column" formControlName="gender">
+                                <mat-radio-button value="1">Male</mat-radio-button>
+                                <mat-radio-button value="2">Female</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <mat-radio-group class="d-flex flex-column" formControlName="role">
+                            <mat-radio-button value="1">Patient</mat-radio-button>
+                            <mat-radio-button value="2">Doctor</mat-radio-button>
+                        </mat-radio-group>
+                </div>
+                <div>
+                    <div class="hospital-list" *ngIf="hospitals$ | async as hospitals">
+                        <mat-form-field>
+                            <mat-label>Choose your hospital</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let hospital of hospitals" [textContent]="hospital?.name"
+                                    [value]="hospital?.pk"></mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="buttons d-flex justify-content-end">
+                    <button mat-raised-button color="primary" (click)="registerUser()">Register</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

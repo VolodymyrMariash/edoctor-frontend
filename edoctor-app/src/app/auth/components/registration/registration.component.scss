@@ -1,0 +1,10 @@
+@import '../../../../styles/module';
+
+.reg-container {
+    margin: 0 auto;
+    padding: 0;
+
+    .radio-block {
+        margin-right: $container_margin;
+    }
+}

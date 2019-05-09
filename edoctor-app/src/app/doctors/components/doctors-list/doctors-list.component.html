@@ -1,0 +1,7 @@
+<mat-card class="col-6">
+    <span class="component-header">Hospitals</span>
+    <div *ngIf="doctors$ | async as doctors">
+        <app-doctors-card *ngFor="let dcotor of doctors"
+        [doctor]="doctor"></app-doctors-card>
+    </div>
+</mat-card>

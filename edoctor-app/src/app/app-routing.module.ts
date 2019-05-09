@@ -1,10 +1,21 @@
-import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: 'home', component: AppComponent },
+    {
+      path: '',
+      loadChildren: './auth/auth.module#AuthModule'
+    },
+    {
+      path: '',
+      loadChildren: './hospitals/hospitals.module#HospitalsModule'
+    },
+    {
+      path: '',
+      loadChildren: './doctors/doctors.module#DoctorsModule'
+    },
+    { path: '**', redirectTo: 'auth/registration', pathMatch: 'full'}
 ];
 
 @NgModule({

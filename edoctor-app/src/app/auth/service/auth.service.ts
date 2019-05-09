@@ -1,31 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { IHospital } from 'src/app/core/interfaces/hospital.interface';
+import { environment } from 'src/environments/environment';
+import { IUserRegistration } from 'src/app/core/interfaces/user-registration.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  readonly endpoint: string = environment.api;
+
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string) {
-    return this.http.post<any>(`${config.apiUrl}/users/authenticate`, { username, password })
-      .pipe(map(user => {
-        // login successful if there's a user in the response
-        if (user) {
-          // store user details and basic auth credentials in local storage 
-          // to keep user logged in between page refreshes
-          user.authdata = window.btoa(username + ':' + password);
-          localStorage.setItem('currentUser', JSON.stringify(user));
-        }
-
-        return user;
-      }));
+  getHospitals(): Observable<IHospital> {
+    return this.http.get<IHospital>(`${this.endpoint}/app/hospital/`);
   }
 
-  logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
+
+  register(user: IUserRegistration): Observable<IUserRegistration> {
+    return this.http.post<IUserRegistration>(`${this.endpoint}/app/user`, user);
   }
 }

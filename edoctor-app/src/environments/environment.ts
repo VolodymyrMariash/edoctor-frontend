@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://edoctorapi.herokuapp.com/admin/'
+  api: 'https://edoctorapi.herokuapp.com'
 };
 
 /*

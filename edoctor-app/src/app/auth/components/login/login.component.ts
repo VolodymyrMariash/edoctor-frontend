@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 this.myParams = {
       particles: {
           number: {
-              value: 160,
+              value: 300,
               density: {
                 enable: true,
                 value_area: 800

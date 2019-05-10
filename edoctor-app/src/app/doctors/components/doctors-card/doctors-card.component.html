@@ -1,10 +1,10 @@
 <div class="hospital-card table">
     <div class="table-row">
       <div class="table-header">
-        <span>Doctors</span>
+        <span>Лікарі</span>
       </div>
       <div class="table-header">
-        <span>Doctors's contacts</span>
+        <span>Контакти</span>
       </div>
       <div class="table-header"></div>
     </div>
@@ -17,8 +17,8 @@
           <div class="d-flex flex-column">
             <span [textContent]="doctor.first_name" class="hospital-name"></span>
             <p class="hospital-address">
-              <span [textContent]=" 'c.' +hospital.city + ', '"></span>
-              <span [textContent]="'st.' + hospital.street"></span>
+              <span [textContent]=" 'м.' +hospital.city + ', '"></span>
+              <span [textContent]="'вул.' + hospital.street"></span>
               <span></span>
             </p>
           </div>
@@ -28,7 +28,7 @@
         <span [textContent]="doctor.phone_number"></span>
       </div>
       <div class="table-cell button-link">
-          <a routerLink='/doctors'>Visit</a>
+          <a routerLink='/doctors'>Записатись</a> <!--visit-->
       </div>
     </div>
   </div>

@@ -40,7 +40,7 @@
                 <div>
                     <div class="hospital-list" *ngIf="hospitals$ | async as hospitals">
                         <mat-form-field>
-                            <mat-label>Оберіть лікарню</mat-label>
+                            <mat-label>Обрати лікарню</mat-label>
                             <mat-select>
                                 <mat-option *ngFor="let hospital of hospitals" [textContent]="hospital?.name"
                                     [value]="hospital?.pk"></mat-option>

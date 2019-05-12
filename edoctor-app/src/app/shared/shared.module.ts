@@ -1,9 +1,10 @@
+import { ParticlesModule } from 'angular-particle';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialsModule } from '../materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ParticleComponent } from './components/particle/particle.component';
 
 @NgModule({
@@ -12,13 +13,16 @@ import { ParticleComponent } from './components/particle/particle.component';
     CommonModule,
     MaterialsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ParticlesModule
   ],
   exports: [
     MaterialsModule,
     ReactiveFormsModule,
     HeaderComponent,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ParticleComponent,
+    ParticlesModule
   ]
 })
 export class SharedModule { }

@@ -18,29 +18,32 @@
                     <input matInput placeholder="Ім'я користувача" formControlName="username" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-error *ngIf="regForm.get('password').hasError('minlength') ">Пароль має містити мінімум 8 символів</mat-error>
-                    <input matInput placeholder="Пароль" formControlName="password" type="password" minlength="8" required>
+                    <mat-error *ngIf="regForm.get('password').hasError('minlength') ">Пароль має містити мінімум 8
+                        символів</mat-error>
+                    <input matInput placeholder="Пароль" formControlName="password" type="password" minlength="8"
+                        required>
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-error *ngIf="regForm.get('email').hasError('required')">Електронна адреса має містити знак "@"</mat-error>
+                    <mat-error *ngIf="regForm.get('email').hasError('required')">Електронна адреса має містити знак "@"
+                    </mat-error>
                     <input matInput placeholder="Електронна адреса" formControlName="email" required>
                 </mat-form-field>
                 <div class="d-flex justify-content-around">
-                        <div class="radio-block">
-                            <mat-radio-group class="d-flex flex-column" formControlName="gender" required>
-                                <mat-radio-button value="1">Жіноча</mat-radio-button>
-                                <mat-radio-button value="2">Чоловіча</mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-                        <mat-radio-group class="d-flex flex-column" formControlName="role">
-                            <mat-radio-button value="1">Пацієнт</mat-radio-button>
-                            <mat-radio-button value="2">Лікар</mat-radio-button>
+                    <div class="radio-block">
+                        <mat-radio-group class="d-flex flex-column" formControlName="gender" required>
+                            <mat-radio-button value="1">Жіноча</mat-radio-button>
+                            <mat-radio-button value="2">Чоловіча</mat-radio-button>
                         </mat-radio-group>
+                    </div>
+                    <mat-radio-group class="d-flex flex-column" formControlName="role">
+                        <mat-radio-button value="1">Пацієнт</mat-radio-button>
+                        <mat-radio-button value="2">Лікар</mat-radio-button>
+                    </mat-radio-group>
                 </div>
                 <div>
                     <div class="hospital-list" *ngIf="hospitals$ | async as hospitals">
                         <mat-form-field>
-                            <mat-label>Оберіть лікарню</mat-label>
+                            <mat-label>Обрати лікарню</mat-label>
                             <mat-select formControlName="hospital">
                                 <mat-option *ngFor="let hospital of hospitals" [textContent]="hospital.name"
                                     [value]="hospital.pk"></mat-option>
@@ -49,6 +52,9 @@
                     </div>
                 </div>
                 <div class="buttons d-flex justify-content-end">
+                    <div class="log-button">
+                        <a mat-raised-button [routerLink]="['/auth/login']">Вже зареєстровані?</a>
+                    </div>
                     <button mat-raised-button color="primary" (click)="registerUser()">Зареєструватися</button>
                 </div>
 
@@ -57,4 +63,3 @@
         </div>
     </mat-card>
 </div>
-

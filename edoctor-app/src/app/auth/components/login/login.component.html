@@ -1,5 +1,3 @@
-
-
 <div class="col-4 log-container">
     <mat-card>
         <div class="component-header">
@@ -17,12 +15,12 @@
                         required>
                 </mat-form-field>
                 <div class="buttons d-flex justify-content-end">
+                    <div class="reg-link">
+                        <a mat-raised-button [routerLink]="['/auth/registration']">Ще не зареєстровані?</a>
+                    </div>
                     <button mat-raised-button color="primary">Увійти</button>
                 </div>
             </form>
         </div>
     </mat-card>
 </div>
-
-
-<particles class="part" [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>

@@ -6,7 +6,6 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialsModule } from '../materials/materials.module';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthComponent } from './auth.component';
-import { ParticlesModule } from 'angular-particle';
 
 @NgModule({
   declarations: [LoginComponent, RegistrationComponent, AuthComponent],
@@ -14,8 +13,7 @@ import { ParticlesModule } from 'angular-particle';
     CommonModule,
     SharedModule,
     MaterialsModule,
-    AuthRoutingModule,
-    ParticlesModule
+    AuthRoutingModule
   ]
 })
 export class AuthModule { }

@@ -3,10 +3,10 @@
 .log-container {
     margin: 0 auto;
     padding: 0;
-}
 
-  
-  canvas {
-    display: block;
-    vertical-align: bottom;
-  }
+    .buttons {
+        a {
+            margin-right: 2rem;
+        }
+    }
+}

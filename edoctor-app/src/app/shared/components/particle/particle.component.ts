@@ -27,19 +27,19 @@ export class ParticleComponent implements OnInit {
     this.myParams = {
       particles: {
         number: {
-          value: 100,
+          value: 200,
           density: {
             enable: true,
             value_area: 800
           }
         },
         color: {
-          value: '#c01616'
+          value: '#6633ff'
         },
         shape: {
           type: "circle",
           polygon: {
-            nb_sides: 10
+            nb_sides: 12
           }
         },
         size: {
@@ -47,7 +47,7 @@ export class ParticleComponent implements OnInit {
         },
         anim: {
           anim: {
-            speed: 15
+            speed: 13
           },
           value: 4
         },
@@ -59,8 +59,8 @@ export class ParticleComponent implements OnInit {
         },
         line_linked: {
           enable_auto: true,
-          distance: 148,
-          color: '#de1a1a',
+          distance: 170,
+          color: '#6633ff',
           opacity: 0.49,
           width: 0.9,
         },

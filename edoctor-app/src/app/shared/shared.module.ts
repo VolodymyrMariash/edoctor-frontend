@@ -4,9 +4,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialsModule } from '../materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { ParticleComponent } from './components/particle/particle.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, ParticleComponent],
   imports: [
     CommonModule,
     MaterialsModule,

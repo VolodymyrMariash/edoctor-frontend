@@ -18,7 +18,7 @@
                     <input matInput placeholder="Ім'я користувача" formControlName="username" required>
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-error *ngIf="regForm.get('password').hasError('minlength') ">Пароль має містити мінімум 8 симовлів</mat-error>
+                    <mat-error *ngIf="regForm.get('password').hasError('minlength') ">Пароль має містити мінімум 8 символів</mat-error>
                     <input matInput placeholder="Пароль" formControlName="password" type="password" minlength="8" required>
                 </mat-form-field>
                 <mat-form-field>
@@ -40,10 +40,10 @@
                 <div>
                     <div class="hospital-list" *ngIf="hospitals$ | async as hospitals">
                         <mat-form-field>
-                            <mat-label>Обрати лікарню</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let hospital of hospitals" [textContent]="hospital?.name"
-                                    [value]="hospital?.pk"></mat-option>
+                            <mat-label>Оберіть лікарню</mat-label>
+                            <mat-select formControlName="hospital">
+                                <mat-option *ngFor="let hospital of hospitals" [textContent]="hospital.name"
+                                    [value]="hospital.pk"></mat-option>
                             </mat-select>
                         </mat-form-field>
                     </div>
@@ -51,6 +51,8 @@
                 <div class="buttons d-flex justify-content-end">
                     <button mat-raised-button color="primary" (click)="registerUser()">Зареєструватися</button>
                 </div>
+
+                {{regForm.value | json}}
             </form>
         </div>
     </mat-card>

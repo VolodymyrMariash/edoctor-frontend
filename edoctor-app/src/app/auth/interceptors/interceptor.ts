@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthenticationService) {}
@@ -13,7 +14,7 @@ export class JwtInterceptor implements HttpInterceptor {
         if (currentUser) {
             request = request.clone({
                 setHeaders: { 
-                    Authorization: `Basic`
+                    Authorization: 'Basic' + btoa('login:password')
                 }
             });
         }

@@ -1,14 +1,14 @@
-import { environment } from 'src/environments/environment';
+import { User } from '../models/user';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { User } from '../models/user';
 
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-    readonly endpoint = environment.api;
+    readonly endpoint = environment.api; 
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 
@@ -22,7 +22,7 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>(`${this.endpoint}`, { username, password })
+        return this.http.post<any>(`${this.endpoint}/user/`, User)
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {

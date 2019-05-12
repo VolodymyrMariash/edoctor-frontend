@@ -28,14 +28,14 @@ export class RegistrationComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       gender: [null, Validators.required],
       role: [null, Validators.required],
-      password: [null, [Validators.required],Validators.minLength(8)],
+      password: [null, [Validators.required, Validators.minLength(8)]],
       hospital: [null, Validators.required]
     });
   }
 
 
   registerUser() {
-    this.authService.register(this.regForm.value);
+    this.authService.registerUser(this.regForm.value);
   }
 
   ngOnInit() {

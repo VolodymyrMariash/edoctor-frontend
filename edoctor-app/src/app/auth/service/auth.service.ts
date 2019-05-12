@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.get<IHospital>(`${this.endpoint}/app/hospital/`);
   }
 
-
-  register(user: IUserRegistration): Observable<IUserRegistration> {
-    return this.http.post<IUserRegistration>(`${this.endpoint}/app/user`, user);
+  registerUser(user: IUserRegistration): Observable<IUserRegistration> {
+    return this.http.post<IUserRegistration>(`${this.endpoint}/user`, user);
   }
+
 }

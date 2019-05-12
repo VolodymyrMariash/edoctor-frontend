@@ -2,6 +2,8 @@ import { environment } from 'src/environments/environment';
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, ObservableInput } from 'rxjs';
+import { IUserRegistration } from 'src/app/core/interfaces/user-registration.interface';
 
 
 

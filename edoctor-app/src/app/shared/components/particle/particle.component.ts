@@ -61,7 +61,7 @@ export class ParticleComponent implements OnInit {
           enable_auto: true,
           distance: 170,
           color: '#6633ff',
-          opacity: 0.49,
+          opacity: 0.5,
           width: 0.9,
         },
         move: {

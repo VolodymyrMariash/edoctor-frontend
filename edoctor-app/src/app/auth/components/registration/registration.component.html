@@ -31,13 +31,11 @@
                 <div class="d-flex justify-content-around">
                     <div class="radio-block">
                         <mat-radio-group class="d-flex flex-column" formControlName="gender" required>
-                            <mat-radio-button value="1">Жіноча</mat-radio-button>
-                            <mat-radio-button value="2">Чоловіча</mat-radio-button>
+                            <mat-radio-button [value]="role" *ngFor="let role of roles">{{role}}</mat-radio-button>
                         </mat-radio-group>
                     </div>
                     <mat-radio-group class="d-flex flex-column" formControlName="role">
-                        <mat-radio-button value="1">Пацієнт</mat-radio-button>
-                        <mat-radio-button value="2">Лікар</mat-radio-button>
+                        <mat-radio-button [value]="gender" *ngFor="let gender of genders">{{gender}}</mat-radio-button>
                     </mat-radio-group>
                 </div>
                 <div>
@@ -51,6 +49,23 @@
                         </mat-form-field>
                     </div>
                 </div>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="birthday">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Місто" formControlName="city" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Вулиця" formControlName="street" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Zip_code" formControlName="zip_code" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Номер" formControlName="phone_number" required>
+                </mat-form-field>
                 <div class="buttons d-flex justify-content-end">
                     <div class="log-button">
                         <a mat-raised-button [routerLink]="['/auth/login']">Вже зареєстровані?</a>

@@ -12,8 +12,4 @@ export class UserService {
 
     readonly endpoint = environment.api;
     constructor(private http: HttpClient) { }
-
-    getAll() {
-        return this.http.get<User[]>(`${this.endpoint}/app/user`);
-    }
 }

@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   registerUser(user: IUserRegistration): Observable<IUserRegistration> {
-    return this.http.post<IUserRegistration>(`${this.endpoint}/user`, user);
+    return this.http.post<IUserRegistration>(`${this.endpoint}/app/user`, user);
   }
 
 }

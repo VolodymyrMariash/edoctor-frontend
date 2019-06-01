@@ -1,20 +1,25 @@
 import { AuthenticationService } from './../service/authentication.service';
 import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable()
-export class JwtInterceptor implements HttpInterceptor {
-    constructor(private authenticationService: AuthenticationService) {}
+export class Interceptor implements HttpInterceptor {
+    readonly endpoint = environment.api; 
+    constructor(private authenticationService: AuthenticationService,
+        private http: HttpClient) {}
 
+      
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // add authorization header with jwt token if available
-        let currentUser = this.authenticationService.currentUserValue;
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (currentUser) {
             request = request.clone({
                 setHeaders: { 
-                    Authorization: 'Basic' + btoa('login:password')
+                    'Content-Type': 'application/json',
+                    'Authorization': `Basic ${currentUser}`
                 }
             });
         }

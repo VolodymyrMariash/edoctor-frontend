@@ -11,10 +11,6 @@ const routes: Routes = [
       path: '',
       loadChildren: './hospitals/hospitals.module#HospitalsModule'
     },
-    {
-      path: '',
-      loadChildren: './doctors/doctors.module#DoctorsModule'
-    },
     { path: '**', redirectTo: 'auth/login', pathMatch: 'full'}
 ];
 

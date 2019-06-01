@@ -1,0 +1,37 @@
+@import '../../../../styles/module';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.td {
+    border-bottom: 0.07rem solid $black;
+    display: table-cell;
+    vertical-align: top;
+    padding: 0.69rem 0;
+    
+    &.name {
+        width: 20%;
+    }
+
+    &.email {
+        width: 30%;
+    }
+
+    &.phone {
+        width: 30%;
+    }
+
+    &.buttons {
+        text-align: right;
+        width: 20%;
+
+    
+    }
+}
+
+.title {
+    font-size: $medium;
+    font-family: Spectral;
+}

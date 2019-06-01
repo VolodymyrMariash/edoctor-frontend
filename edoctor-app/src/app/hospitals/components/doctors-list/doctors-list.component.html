@@ -1,0 +1,12 @@
+<mat-card class="col-10">
+    <span class="component-header">Лікарі</span>
+    <div class="table">
+        <div class="tr">
+            <div class="th name">Ім'я</div>
+            <div class="th email">Email</div>
+            <div class="th phone">Номер телефону</div>
+            <div class="th buttons"></div>
+        </div>
+        <app-doctors-card *ngFor="let doctor of doctors" [doctor]="doctor"></app-doctors-card>
+    </div>
+</mat-card>

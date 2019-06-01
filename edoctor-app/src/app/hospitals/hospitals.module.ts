@@ -1,3 +1,5 @@
+import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
+import { DoctorsCardComponent } from './components/doctors-card/doctors-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialsModule } from '../materials/materials.module';
@@ -8,12 +10,13 @@ import { HospitalsCardComponent } from './components/hospitals-card/hospitals-ca
 import { HospitalsRoutingModule } from './hospitals-routing.module';
 
 @NgModule({
-  declarations: [HospitalsComponent, HospitalsListComponent, HospitalsCardComponent],
+  declarations: [HospitalsComponent, HospitalsListComponent, HospitalsCardComponent, DoctorsCardComponent,
+    DoctorsListComponent],
   imports: [
     CommonModule,
     SharedModule,
     MaterialsModule,
     HospitalsRoutingModule
-  ]
+  ],
 })
 export class HospitalsModule { }

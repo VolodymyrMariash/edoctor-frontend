@@ -1,7 +1,11 @@
-<mat-card class="col-6">
+<mat-card class="col-10" *ngIf="hospitals$ | async as hospitals">
     <span class="component-header">Лікарні</span>
-    <div *ngIf="hospitals$ | async as hospitals">
-        <app-hospitals-card *ngFor="let hospital of hospitals"
-        [hospital]="hospital"></app-hospitals-card>
+    <div class="table">
+        <div class="tr">
+            <div class="th name">Лікарня</div>
+            <div class="th phone">Контакти</div>
+            <div class="th buttons"></div>
+        </div>
+        <app-hospitals-card *ngFor="let hospital of hospitals" [hospital]="hospital"></app-hospitals-card>
     </div>
 </mat-card>

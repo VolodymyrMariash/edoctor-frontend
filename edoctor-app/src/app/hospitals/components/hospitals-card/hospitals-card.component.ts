@@ -13,6 +13,11 @@ export class HospitalsCardComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    
+  }
+
+  navigateToDoctors(hospital_id) {
+    this.router.navigate([`/hospitals/${hospital_id}`]);
   }
 
 }

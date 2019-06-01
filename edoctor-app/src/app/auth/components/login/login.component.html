@@ -6,8 +6,8 @@
         <div>
             <form [formGroup]="logForm">
                 <mat-form-field>
-                    <mat-error *ngIf="logForm.get('username').hasError('required')"></mat-error>
-                    <input matInput placeholder="Ім'я користувача" formControlName="username" required>
+                    <mat-error *ngIf="logForm.get('email').hasError('required')"></mat-error>
+                    <input matInput placeholder="Email" formControlName="email" required>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-error *ngIf="logForm.get('password').hasError('minlength') "></mat-error>
@@ -18,7 +18,7 @@
                     <div class="reg-link">
                         <a mat-raised-button [routerLink]="['/auth/registration']">Ще не зареєстровані?</a>
                     </div>
-                    <button mat-raised-button color="primary">Увійти</button>
+                    <button mat-raised-button color="primary" (click)="loginUser()">Увійти</button>
                 </div>
             </form>
         </div>

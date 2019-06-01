@@ -1,62 +1,49 @@
 @import '../../../../styles/module';
 
-.hospital-card {
-    margin-top: $container_margin;
+.td {
+    display: table-cell;
+    vertical-align: top;
+    padding: $component_padding 0;
+    border-bottom: 0.07rem solid $black;
 
-    .hospital-block {
-        .img {
-            margin-right: $container_margin;
-            width: 4rem;
-            height: 4rem;
-            text-align: center;
-        
-            img {
-                max-width: 100%;
-                height: 100%;
-            }
-        }
 
-        .hospital-name {
-            font-size: $medium;
-            font-weight: 500;
-            color: $black;
-        }
+    &.name {
+        width: 50%;
+    }
 
-        .hospital-address {
-            font-size: $medium;
-            font-weight: 500;
-            color: $black;
+    &.phone {
+        width: 35%;
+    }
+
+    &.button-link {
+        text-align: right;
+    
+        button {
+            margin-right: 0;
         }
     }
-}
 
-
-.table {
-    display: table;
-
-    .table-row {
-        display: table-row;
-
-        .table-header {
-            display: table-cell;
-            font-size: $medium;
-            font-weight: 500;
-            color: $black;
-        }
-
-        .table-cell {
-            padding: $container_padding 0;
-            vertical-align: top;
-            border-top: $border;
-            display: table-cell;
+    .img {
+        margin-right: $container_margin;
+        width: 4rem;
+        height: 4rem;
+        text-align: center;
+    
+        img {
+            max-width: 100%;
+            height: 100%;
         }
     }
-}
 
-button {
-    margin-right: 0;
-}
+    .hospital-name {
+        font-size: $medium;
+        font-weight: 500;
+        color: $black;
+    }
 
-.button-link {
-    text-align: right;
+    .hospital-address {
+        font-size: $medium;
+        font-weight: 500;
+        color: $black;
+    }
 }

@@ -1,0 +1,15 @@
+<div class="td name">
+  <p class="title">
+    <span [textContent]="doctor?.first_name + ' '"></span>
+    <span [textContent]="doctor?.last_name"></span>
+  </p>
+</div>
+<div class="td email">
+  <span class="title" [textContent]="doctor?.email"></span>
+</div>
+<div class="td phone">
+  <span class="title" [textContent]="doctor?.phone_number"></span>
+</div>
+<div class="td buttons">
+  <button class="buttons" mat-raised-button color=primary> <span>Записатись на візит</span></button>
+</div>

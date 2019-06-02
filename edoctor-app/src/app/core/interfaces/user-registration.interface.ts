@@ -12,4 +12,5 @@ export interface IUserRegistration {
     zip_code: number;
     hospital: any;
     password: string;
+    username: string;
 }

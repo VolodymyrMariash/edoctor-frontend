@@ -23,7 +23,7 @@ export class DoctorsListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.route.params
       .subscribe((params) => {
-          this.hospitalsService.getDoctorsByHospitalId(+params['hospital_id'], 1)
+          this.hospitalsService.getDoctorsByHospitalId(+params['hospital_id'])
           .pipe(takeUntil(this.destroySubject$))
           .subscribe((result) => {
             this.doctors = result;

@@ -16,7 +16,7 @@
     }
 
     &.email {
-        width: 30%;
+        width: 0%;
     }
 
     &.phone {
@@ -25,7 +25,10 @@
 
     &.buttons {
         text-align: right;
-        width: 20%;
+    
+        button {
+            margin-right: 0;
+        }
     }
 }
 

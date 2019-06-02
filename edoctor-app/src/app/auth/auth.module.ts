@@ -1,3 +1,4 @@
+import { UserService } from './service/user.service';
 import { Interceptor } from './interceptors/interceptor';
 import { ErrorInterceptor } from './interceptors/error-interceptor';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     MaterialsModule,
     AuthRoutingModule,
     HttpClientModule
-
   ]
 })
 export class AuthModule { }

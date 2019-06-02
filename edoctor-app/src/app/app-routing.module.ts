@@ -11,6 +11,10 @@ const routes: Routes = [
       path: '',
       loadChildren: './hospitals/hospitals.module#HospitalsModule'
     },
+    {
+      path: '',
+      loadChildren: './profile/profile.module#ProfileModule'
+    },
     { path: '**', redirectTo: 'auth/login', pathMatch: 'full'}
 ];
 

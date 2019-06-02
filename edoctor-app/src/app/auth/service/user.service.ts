@@ -12,4 +12,8 @@ export class UserService {
 
     readonly endpoint = environment.api;
     constructor(private http: HttpClient) { }
+
+    getUserDetails(): Observable<IUserRegistration> {
+        return this.http.get<IUserRegistration>(`${this.endpoint}/app/user/details/`);
+      }
 }

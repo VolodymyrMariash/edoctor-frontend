@@ -16,6 +16,6 @@
 <div class="name td">
   <span [textContent]="hospital.phone_number"></span>
 </div>
-<div class="td button-link" (click)="navigateToDoctors(hospital.pk)">
-  <button mat-raised-button color=primary> <span>Переглянути лікарів</span></button>
+<div class="td button-link">
+  <button mat-raised-button color=primary (click)="navigateToDoctors(hospital.pk)"> <span>Переглянути лікарів</span></button>
 </div>

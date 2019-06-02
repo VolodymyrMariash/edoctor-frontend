@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,15 +8,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() public sidenavToggle = new EventEmitter();
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     
   }
 
-  public onToggleSidenav = () => {
-    this.sidenavToggle.emit();
+  navigateToProfile() {
+    this.router.navigate(['profile']);
   }
+
+
 
 }

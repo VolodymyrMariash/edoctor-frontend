@@ -1,0 +1,36 @@
+<mat-card *ngIf="user.role === 1">
+        <span class="component-header">Переглянути записи</span>
+        <div [formGroup]=form>
+            <mat-form-field appearance="outline">
+                <input matInput [matDatepicker]="picker" placeholder="Виберіть дату" formControlName="date"
+                    (dateChange)="getUTCTime(regForm, 'date', $event)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </mat-card>
+    
+    <mat-card>
+        <span class="component-header" *ngIf="user.role === 0">Ваші записи</span>
+        <span class="component-header" *ngIf="user.role === 1">Ваші прийоми</span>
+        <div class="table">
+            <div class="tr">
+                <div class="th">Дата запису</div>
+                <div class="th">Час запису</div>
+                <div class="th"></div>
+            </div>
+            <div class="tr" *ngFor="let visit of visits">
+                    <div class="td time">
+                            <span [textContent]="visit.start_date | date: 'dd/MM/yyyy'"></span>
+                        </div>
+                <div class="td date">
+                    <p class="title">
+                        <span [textContent]="visit.time"></span>
+                    </p>
+                </div>
+                <div class="td buttons">
+                    <button mat-raised-button color=primary (click)="openDialog(visit.pk)">Редагувати запис</button>
+                </div>
+            </div>
+        </div>
+    </mat-card>

@@ -12,8 +12,8 @@ import { IUserRegistration } from 'src/app/core/interfaces/user-registration.int
 export class AuthenticationService {
     readonly endpoint = environment.api;
     user: any;
+    userDetails: IUserRegistration;
     public currentUser: Observable<any>;
-    public userRole:number = 1;
     userData: any;
 
     constructor(private http: HttpClient) {
@@ -24,9 +24,8 @@ export class AuthenticationService {
     login(email: string, password: string) {
         this.user = window.btoa(email + ':' + password);
         localStorage.setItem('currentUser', JSON.stringify(this.user));
-        localStorage.setItem('userRole', JSON.stringify(this.userRole));
 
-        return this.user, this.userRole;
+        return this.user;
     }
 
     logout() {

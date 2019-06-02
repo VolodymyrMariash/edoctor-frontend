@@ -8,12 +8,11 @@ import { IVisit } from 'src/app/core/interfaces/visit.interface';
   styleUrls: ['./visit-card.component.scss']
 })
 export class VisitCardComponent implements OnInit {
-  @Input() visit: IVisit;
   constructor(private hospitalService: HospitalsService) { }
     
   ngOnInit() {
 
-    console.log(this.hospitalService.getVisitDate());
+
   }
 
 }

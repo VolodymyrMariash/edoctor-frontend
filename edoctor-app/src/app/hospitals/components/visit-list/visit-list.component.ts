@@ -6,6 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material';
 import { takeUntil } from 'rxjs/operators';
 import { IVisit } from 'src/app/core/interfaces/visit.interface';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-visit-list',
@@ -15,12 +16,14 @@ import { IVisit } from 'src/app/core/interfaces/visit.interface';
 export class VisitListComponent implements OnInit, OnDestroy {
   destroySubject$: Subject<void> = new Subject();
   form: FormGroup;
-  visits: IVisit;
+  visits: IVisit[];
   user = {};
+  fileUrl;
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
               private hospitalService: HospitalsService,
-              private router: Router) { }
+              private router: Router,
+              private sanitizer: DomSanitizer) { }
 
 
   getUTCTime(form, controlName: string, event: MatDatepickerInputEvent<Date>) {
@@ -39,23 +42,26 @@ export class VisitListComponent implements OnInit, OnDestroy {
       this.hospitalService.getVisitsByDate(this.form.get('date').value, +params['doctor_id'])
       .pipe(takeUntil(this.destroySubject$))
       .subscribe((result) => {
-          this.visits = result;
-      })
+          this.visits = result.filter( (item) => {
+            if (item.patient === null) {
+              return item;
+            };
+        });
+      });
     });
+
+    this.setVisitDate();
   }
 
-
   setVisitDate() {
-    this.hospitalService.setVisitDate(this.form.get('date'));
+    this.hospitalService.setVisitDate(this.form.get('date').value);
   }
 
 
   regVisit(visit_id) {
     this.hospitalService.updateVisit(visit_id, this.user)
     .pipe(takeUntil(this.destroySubject$))
-    .subscribe((result) => {
-      console.log(this.user);
-    });
+    .subscribe((result) => {});
   }
 
   ngOnDestroy() {

@@ -1,5 +1,5 @@
 <mat-card class="col-4">
-        <span class="component-header">Вибір дати для прийому</span>
+    <span class="component-header">Вибір дати для прийому</span>
     <div [formGroup]=form>
         <mat-form-field appearance="outline">
             <input matInput [matDatepicker]="picker" placeholder="Виберіть дату для запису" formControlName="date"
@@ -28,7 +28,8 @@
                 </p>
             </div>
             <div class="td buttons">
-                <button mat-raised-button color=primary (click)="regVisit(visit.pk)">Записатись на прийом</button>
+                <button mat-raised-button color=primary (click)="regVisit(visit.pk); downloadFile()">Записатись на
+                    прийом</button>
             </div>
         </div>
     </div>

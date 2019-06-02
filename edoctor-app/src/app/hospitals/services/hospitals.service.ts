@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
@@ -33,12 +34,16 @@ export class HospitalsService {
     return this.http.get<IHospital>(`${this.endpoint}/app/hospital/${hospital_id}`);
   }
 
-  getDoctorsByHospitalId(hospital_id: number, role?: number): Observable<IUserRegistration[]> {
-    return this.http.get<IUserRegistration[]>(`${this.endpoint}/app/user/?role=${role}&hospital=${hospital_id}`);
+  getDoctorsByHospitalId(hospital_id: number): Observable<IUserRegistration[]> {
+    return this.http.get<IUserRegistration[]>(`${this.endpoint}/app/user/?hospital=${hospital_id}`);
   }
 
-  getVisitsByDate(date: string, doctor_id: number): Observable<IVisit> {
-    return this.http.get<IVisit>(`${this.endpoint}/app/visit/?date=${date}&doctor=${doctor_id}`);
+  getVisitsByDate(date: string, doctor_id: number): Observable<IVisit[]> {
+    return this.http.get<IVisit[]>(`${this.endpoint}/app/visit/?date=${date}&doctor=${doctor_id}`);
+  }
+
+  getVisitsByDatePDF(date: string, doctor_id: number, expor: number): Observable<any> {
+    return this.http.get<any>(`${this.endpoint}/app/visit/?date=${date}&doctor=${doctor_id}&export=${expor}`)
   }
 
   updateVisit(visit_id: number, data: any): Observable<any> {

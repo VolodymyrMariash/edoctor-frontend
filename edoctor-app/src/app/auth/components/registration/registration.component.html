@@ -5,25 +5,25 @@
         </div>
         <div>
             <form [formGroup]="regForm">
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-error *ngIf="regForm.get('first_name').hasError('required')">Це поле є обов'язковим</mat-error>
                     <input matInput placeholder="Ім'я" formControlName="first_name" required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-error *ngIf="regForm.get('last_name').hasError('required')">Це поле є обов'язковим</mat-error>
                     <input matInput placeholder="Прізвище" formControlName="last_name" required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-error *ngIf="regForm.get('username').hasError('required')">Це поле є обов'язковим</mat-error>
                     <input matInput placeholder="Ім'я користувача" formControlName="username" required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-error *ngIf="regForm.get('password').hasError('minlength') ">Пароль має містити мінімум 8
                         символів</mat-error>
                     <input matInput placeholder="Пароль" formControlName="password" type="password" minlength="8"
                         required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-error *ngIf="regForm.get('email').hasError('required')">Електронна адреса має містити знак "@"
                     </mat-error>
                     <input matInput placeholder="Електронна адреса" formControlName="email" required>
@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <div class="hospital-list" *ngIf="hospitals$ | async as hospitals">
-                        <mat-form-field>
+                        <mat-form-field appearance="outline">
                             <mat-label>Обрати лікарню</mat-label>
                             <mat-select formControlName="hospital">
                                 <mat-option *ngFor="let hospital of hospitals" [textContent]="hospital.name"
@@ -51,22 +51,22 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <input matInput  [matDatepicker]="picker" placeholder="Choose a date" formControlName="birthday" 
                     (dateChange)="getUTCTime(regForm, 'birthday', $event)">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <input matInput placeholder="Місто" formControlName="city" required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <input matInput placeholder="Вулиця" formControlName="street" required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <input matInput placeholder="Zip_code" formControlName="zip_code" required>
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <input matInput placeholder="Номер" formControlName="phone_number" required>
                 </mat-form-field>
                 <div class="buttons d-flex justify-content-end">

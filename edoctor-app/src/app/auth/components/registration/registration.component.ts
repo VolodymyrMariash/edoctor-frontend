@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
       gender: [null, Validators.required],
       role: [null, Validators.required],
       password: [null, [Validators.required, Validators.minLength(8)]],
-      hospital: [null, Validators.required],
+      hospital: [null],
       birthday: [''],
       city: [null, Validators.required],
       phone_number: [null, Validators.required],
@@ -57,14 +57,12 @@ export class RegistrationComponent implements OnInit {
 
   getUTCTime(form, controlName: string, event: MatDatepickerInputEvent<Date>) {
     this.regForm.controls[controlName].setValue(event.value.toISOString().substring(0,10));
-    console.log(event.value.toISOString().substring(0,10));
+
   }
 
   registerUser() {
     this.authService.registerUser(this.regForm.value)
-    .subscribe( (param) => {
-      console.log(1);
-    });
+    .subscribe( (param) => {});
   }
 
   ngOnInit() {

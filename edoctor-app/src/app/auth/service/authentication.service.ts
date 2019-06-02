@@ -11,9 +11,10 @@ import { IUserRegistration } from 'src/app/core/interfaces/user-registration.int
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     readonly endpoint = environment.api;
-    userData: any;
     user: any;
     public currentUser: Observable<any>;
+    public userRole:number = 1;
+    userData: any;
 
     constructor(private http: HttpClient) {
         this.currentUser;
@@ -21,17 +22,17 @@ export class AuthenticationService {
 
 
     login(email: string, password: string) {
-
-        // store user details and jwt token in local storage to keep user logged in between page refreshes
         this.user = window.btoa(email + ':' + password);
         localStorage.setItem('currentUser', JSON.stringify(this.user));
+        localStorage.setItem('userRole', JSON.stringify(this.userRole));
 
-        return this.user;
+        return this.user, this.userRole;
     }
 
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('userRole');
     }
 
     setUserData(data) {

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IHospital } from 'src/app/core/interfaces/hospital.interface';
 import { IUserRegistration } from 'src/app/core/interfaces/user-registration.interface';
+import { IVisit } from 'src/app/core/interfaces/visit.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class HospitalsService {
     return this.http.get<IHospital>(`${this.endpoint}/app/hospital/${hospital_id}`);
   }
 
-  getDoctorsByHospitalId(role: number, hospital_id?: number): Observable<IUserRegistration[]> {
+  getDoctorsByHospitalId(role: number, hospital_id: number): Observable<IUserRegistration[]> {
     return this.http.get<IUserRegistration[]>(`${this.endpoint}/app/user/?role=${role}&hospital=${hospital_id}`);
   }
 }

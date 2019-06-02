@@ -8,10 +8,14 @@ import { SharedModule } from '../shared/shared.module';
 import { HospitalsListComponent } from './components/hospitals-list/hospitals-list.component';
 import { HospitalsCardComponent } from './components/hospitals-card/hospitals-card.component';
 import { HospitalsRoutingModule } from './hospitals-routing.module';
+import { VisitListComponent } from './components/visit-list/visit-list.component';
+import { VisitCardComponent } from './components/visit-card/visit-card.component';
 
 @NgModule({
   declarations: [HospitalsComponent, HospitalsListComponent, HospitalsCardComponent, DoctorsCardComponent,
-    DoctorsListComponent],
+    DoctorsListComponent,
+    VisitListComponent,
+    VisitCardComponent],
   imports: [
     CommonModule,
     SharedModule,

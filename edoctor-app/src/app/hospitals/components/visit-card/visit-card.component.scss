@@ -1,0 +1,20 @@
+@import '../../../../styles//module';
+
+mat-card {
+    margin: $component_margin auto;
+    .table {
+        margin-top: 0.69rem;
+        display: table;
+        .tr {
+            display: table-row;
+            .th {
+                border-bottom: 0.07rem solid $black;
+                display: table-cell;
+            }
+            .td {
+                display: table-cell;
+                border-bottom: 0.07rem solid $black;
+            }
+        }
+    }
+}

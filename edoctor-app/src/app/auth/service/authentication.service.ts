@@ -13,7 +13,7 @@ export class AuthenticationService {
     readonly endpoint = environment.api;
     user: any;
     public currentUser: Observable<any>;
-    public userRole:number = 0;
+    public userRole:number = 1;
     userData: any;
 
     constructor(private http: HttpClient) {

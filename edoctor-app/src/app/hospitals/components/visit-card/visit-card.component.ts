@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HospitalsService } from './../../services/hospitals.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { IVisit } from 'src/app/core/interfaces/visit.interface';
 
 @Component({
   selector: 'app-visit-card',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./visit-card.component.scss']
 })
 export class VisitCardComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() visit: IVisit;
+  constructor(private hospitalService: HospitalsService) { }
+    
   ngOnInit() {
+
+    console.log(this.hospitalService.getVisitDate());
   }
 
 }

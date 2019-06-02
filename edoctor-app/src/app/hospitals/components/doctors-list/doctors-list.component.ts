@@ -1,3 +1,4 @@
+import { Role } from './../../../auth/models/roles';
 import { HospitalsService } from './../../services/hospitals.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -15,13 +16,14 @@ export class DoctorsListComponent implements OnInit, OnDestroy {
   destroySubject$: Subject<void> = new Subject();
   doctors: IUserRegistration[];
   hospital: IHospital;
+  role: Role;
   constructor(private hospitalsService: HospitalsService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params
       .subscribe((params) => {
-          this.hospitalsService.getDoctorsByHospitalId(1, +params['hospital_id'])
+          this.hospitalsService.getDoctorsByHospitalId(+params['hospital_id'], 1)
           .pipe(takeUntil(this.destroySubject$))
           .subscribe((result) => {
             this.doctors = result;

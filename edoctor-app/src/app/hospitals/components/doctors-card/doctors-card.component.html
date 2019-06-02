@@ -11,5 +11,5 @@
   <span class="title" [textContent]="doctor?.phone_number"></span>
 </div>
 <div class="td buttons">
-  <button class="buttons" mat-raised-button color=primary (click)="navigateToVisits()"> <span>Записатись на візит</span></button>
+  <button class="buttons" mat-raised-button color=primary (click)="navigateToVisits(doctor?.pk)"> <span>Записатись на візит</span></button>
 </div>

@@ -17,8 +17,8 @@ export class DoctorsCardComponent implements OnInit {
   }
 
 
-  navigateToVisits() {
-    this.router.navigate(['/hospitals/visits']);
+  navigateToVisits(doctor_id) {
+    this.router.navigate([`/hospitals/visits/${doctor_id}`]);
   }
 
 }

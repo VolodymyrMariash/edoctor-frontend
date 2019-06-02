@@ -1,3 +1,4 @@
+import { VisitCardComponent } from './components/visit-card/visit-card.component';
 import { VisitListComponent } from './components/visit-list/visit-list.component';
 import { HospitalsListComponent } from './components/hospitals-list/hospitals-list.component';
 import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
       },
       {
         path: 'visits',
+        component: VisitCardComponent
+      },
+      {
+        path: 'visits/:doctor_id',
         component: VisitListComponent
       },
       {

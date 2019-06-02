@@ -1,1 +1,35 @@
-<div></div>
+<mat-card class="col-4">
+        <span class="component-header">Вибір дати для прийому</span>
+    <div [formGroup]=form>
+        <mat-form-field appearance="outline">
+            <input matInput [matDatepicker]="picker" placeholder="Виберіть дату для запису" formControlName="date"
+                (dateChange)="getUTCTime(regForm, 'date', $event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="buttons d-flex justify-content-end">
+        <button mat-raised-button color=primary (click)="setDate()">Переглянути доступний час</button>
+    </div>
+</mat-card>
+
+<mat-card class="col-4">
+    <span class="component-header">Вільний час для запису на прийом</span>
+    <div class="table">
+        <div class="tr">
+            <div class="th">Час запису</div>
+            <div class="th"></div>
+        </div>
+        <div class="tr" *ngFor="let visit of visits">
+            <div class="td date">
+                <p class="title">
+                    <span [textContent]="visit.time"></span>
+                    <span></span>
+                </p>
+            </div>
+            <div class="td buttons">
+                <button mat-raised-button color=primary (click)="regVisit(visit.pk)">Записатись на прийом</button>
+            </div>
+        </div>
+    </div>
+</mat-card>

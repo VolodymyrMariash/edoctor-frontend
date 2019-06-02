@@ -4,11 +4,6 @@ import { DoctorsListComponent } from './components/doctors-list/doctors-list.com
 import { HospitalsComponent } from './hospitals.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AuthGuard } from '../auth/guards/auth.guard';
-import { Role } from '../auth/models/roles';
-
-
-
 
 const routes: Routes = [
   {
@@ -20,12 +15,12 @@ const routes: Routes = [
         component: HospitalsListComponent
       },
       {
-        path: ':hospital_id',
-        component: DoctorsListComponent
-      },
-      {
         path: 'visits',
         component: VisitListComponent
+      },
+      {
+        path: ':hospital_id',
+        component: DoctorsListComponent
       }
     ]
   }

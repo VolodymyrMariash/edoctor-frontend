@@ -12,7 +12,10 @@ import { VisitListComponent } from './components/visit-list/visit-list.component
 import { VisitCardComponent } from './components/visit-card/visit-card.component';
 
 @NgModule({
-  declarations: [HospitalsComponent, HospitalsListComponent, HospitalsCardComponent, DoctorsCardComponent,
+  declarations: [HospitalsComponent, 
+    HospitalsListComponent, 
+    HospitalsCardComponent, 
+    DoctorsCardComponent,
     DoctorsListComponent,
     VisitListComponent,
     VisitCardComponent],

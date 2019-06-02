@@ -15,5 +15,4 @@ export class HospitalsListComponent implements OnInit {
   ngOnInit() {
     this.hospitals$ = this.hospitalsService.getHospitals();
   }
-
 }

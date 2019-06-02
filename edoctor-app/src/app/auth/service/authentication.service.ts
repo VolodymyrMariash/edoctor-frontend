@@ -13,7 +13,7 @@ export class AuthenticationService {
     readonly endpoint = environment.api;
     user: any;
     public currentUser: Observable<any>;
-    public userRole:number = 1;
+    public userRole:number = 0;
     userData: any;
 
     constructor(private http: HttpClient) {
@@ -32,7 +32,7 @@ export class AuthenticationService {
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
-        localStorage.removeItem('userRole');
+        // localStorage.removeItem('userRole');
     }
 
     setUserData(data) {

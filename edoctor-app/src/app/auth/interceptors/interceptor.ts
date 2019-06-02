@@ -15,8 +15,8 @@ export class Interceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // add authorization header with jwt token if available
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        let userRole = JSON.parse(localStorage.getItem('userRole'));
-        if (currentUser && userRole) {
+        // let userRole = JSON.parse(localStorage.getItem('userRole'));
+        if (currentUser) {
             request = request.clone({
                 setHeaders: { 
                     'Content-Type': 'application/json',

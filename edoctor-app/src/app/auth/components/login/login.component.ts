@@ -29,15 +29,11 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    const userRole = localStorage.getItem('userRole');
+    // const userRole = localStorage.getItem('userRole');
     const currentUser = localStorage.getItem('currentUser');
     this.authService.login(this.logForm.get('email').value, this.logForm.get('password').value);
-    if (this.authService.userRole === 0) {
       this.router.navigate(['/hospitals/list']);
-    } else {
-      this.router.navigate(['auth/registration']);
-    }
-  }
+}
 
 
 
